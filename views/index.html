@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+ 
+
+  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body class="text-center">
+<a href="/adminPage">Admin me</a>
+<h1 class="gide"> Tigrigna Translation</h1>
+
+  <div class="container" ng-controller="mycontroller">
+
+ 	<p id="pIdTitle">From / ካብ</p>
+      <strong>choose language</strong><br>
+       <select class="combobox" name="fromSelectedLanguageId" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
+         <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
+       </select> <br>
+       <input class="textbox" class="form-control" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
+       
+     
+      <p id="pIdTitle">To / ናብ</p><br>
+      <strong>choose langauge to</strong><br>
+      <select class="combobox" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
+          <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
+       </select> <br>
+       <input class="btn btn-primary" value="Translate" ng-click="add()"><br>
+       <div>
+         <ul class="outputDiv">
+            <li class="result" ng-repeat="data in outPut">{{data.Expr1}}</li>
+
+         </ul>
+       </div>
+     
+      
+
+ </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="controllers/controllers.js"></script>
+ 
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+
+
+
+
+</body>
+</html>

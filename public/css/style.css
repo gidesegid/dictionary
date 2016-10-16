@@ -1,0 +1,27 @@
+body{
+	background-color: red;
+	color: blue;
+	background-image: url("http://www.entomecta.gr/wp-content/uploads/2016/02/gray-background-16-Best-Background-1.jpg");
+}
+.gide{
+	color:red;
+}
+.combobox{
+	margin:20px 20px;
+	padding:10px 20px;
+	width:200px;
+}
+.textbox{
+	margin:20px 20px;
+	padding:10px 20px;
+}
+.outputDiv{
+	background-color: white;
+	margin:20px 20px;
+	padding:30px 30px;
+}
+.result{
+	font-size: 16px;
+	color: blue;
+	margin:10px 30px;
+}
