@@ -5,7 +5,7 @@ var bodyParser=require('body-parser');
 app.set('view engine','ejs');
 var path=require('path');
 var mysql=require('mysql');
-// app.engirequire('./router/main')(app);
+require('./router/main')(app);
 app.set('views',__dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname+'/public'));
@@ -39,19 +39,7 @@ connection.connect(function(error){
  
 // });
 
-     app.get('/',function(req,res){
-        res.render('index.html')
-     });
-     app.get('/about',function(req,res){
-        res.render('about.html');
-    });
-     app.get('/contact',function(req,res){
-        res.render('contactUs.html');
-    });
-     app.get('/adminPage',function(req,res){
-        console.log("arrived in router");
-        res.render('adminPage.html');
-    });
+     
 
 app.get('/data',function(req,res){
   
