@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp2">
 <head>
 	<title>admin</title>
+	<link rel="stylesheet" type="text/css" href="js/style.css">
+	<script src="js/controller.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -9,15 +11,21 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 </head>
-<body class="text-center">
+<body class="text-center" ng-controller="myController">
 
 		<div class="container">
 			<select>
-				<option></option>
+				<option>Gide segid    </option>
 			</select>
 			<input type="textbox" name="">
 
 		</div>
+
+
+		<input type="text" keyboard-poster post-function="searchFlight" name="first_name" placeholder="Zurich, Switzerland" list="_countries" style='margin-bottom: 100px'>
+            <datalist id="_countries">
+             <select style="display: none;" id="_select" name="_select" ng-model='selectedCountry' ng-options='k as v for (k,v) in countries'></select>
+           </datalist>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="controllers/controllers.js"></script>

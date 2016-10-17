@@ -21,31 +21,35 @@
 </head>
 <body ng-controller="mycontroller">
 <a href="/adminPage">Admin me</a>
-<h1 class="gide"> Tigrigna Translation</h1>
+<div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div class="container row" class="col-lg-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+         <strong>choose language</strong><br>
+         <select class="combobox" name="fromSelectedLanguageId" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
+           <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
+         </select> <br>
 
-  <div class="container">
+           <input class="textbox" class="form-control" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
 
- 	<p id="pIdTitle">From / ካብ</p>
-      <strong>choose language</strong><br>
-       <select class="combobox" name="fromSelectedLanguageId" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
-         <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-       </select> <br>
-       <input class="textbox" class="form-control" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
-      <p id="pIdTitle">To / ናብ</p><br>
-      <strong>choose langauge to</strong><br>
-      <select class="combobox" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
-          <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-       </select> <br>
-       <input class="btn btn-primary" value="Translate" ng-click="add()"><br>
- </div>
- <div>
+        <strong>choose langauge to</strong><br>
+
+          <select class="combobox" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
+               <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
+          </select> <br>
+        <input type="button" class="btn btn-primary" value="Translate" ng-click="add()"><br>
+      
          <ul class="outputDive" ng-model="inputdata">{{inputdata}}
             <li class="result" ng-repeat="data in outPut">{{data.Expr1}}</li>
-         
-         
-
          </ul>
-       </div>
+       
+      </div>
+     
+       
+       
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="controllers/controllers.js"></script>
  
@@ -56,9 +60,4 @@
 
 </body>
 
-
-
-
-
-</body>
 </html>

@@ -1,5 +1,19 @@
 
-
+var express=require('express');
+var mysql=require('mysql');
+var connection=mysql.createConnection({
+  host:'localhost',
+  user:'root',
+  password:'wedisegid',
+  database:'dictionary2'
+});
+connection.connect(function(error){
+  if(!!error){
+    console.log('Error');
+  }else{
+    console.log('connected');
+  }
+})
 
 module.exports = function(app)
 {
@@ -13,61 +27,51 @@ module.exports = function(app)
         res.render('contactUs.html');
     });
      app.get('/adminPage',function(req,res){
-        console.log("arrived in router");
         res.render('adminPage.html');
     });
      
+    app.get('/data',function(req,res){
+  
+    connection.query("select * from languages",function(error,row,fields){
+        if(!!error){
+          console.log('error in query')
+        }else{
+           console.log('succesfully connected');
+           console.log(row);
+           res.json(row);
+        }
+      });
+
+   });
+
+    app.get('/dataw/:fromLanguageId/:word/:toLnaguageId',function(req,res){
+
+             var fromLanguageId=req.params.fromLanguageId;
+             var word=req.params.word;
+             var toLnaguageId=req.params.toLnaguageId;
+             console.log(fromLanguageId)
+             console.log(word);
+     
+       
+       connection.query("SELECT   words.text, words_1.text AS Expr1 FROM "+
+        "languages INNER JOIN words ON languages.id = words.languages_id INNER JOIN translation ON words.id"+
+        " = translation.from_id INNER JOIN words AS words_1 ON translation.to_id = words_1.id INNER JOIN languages"+
+        " AS languages_1 ON words_1.languages_id = languages_1.id WHERE  (words.text = '"+word+"') AND"+
+        " (languages.id ="+fromLanguageId+" ) AND (languages_1.id = "+toLnaguageId+")",function(error,row,fields){
+            if(!!error){
+              console.log('error in query')
+            }else{
+               console.log('succesfully connected');
+               console.log(row);
+               res.send(row);
+            }
+      
+         });
+    })
      
 }
 
 
 
-    //other routes..
-
-// Some more get requests for different pages
-
-
-    //url https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4
-
-// router.get('/', function(req, res) {
-//     res.send('im the home page!');  
-// }); 
-// router.get('/about', function(req, res) {
-//     res.send('im the about page!'); 
-// });
-//     router.get('/hello/:name', function(req, res) {
-//     res.send('hello ' + req.params.name + '!');
-// });
-// // apply the routes to our application
-
-// // route middleware to validate :name
-// router.param('name', function(req, res, next, name) {
-//     // do validation on name here
-//     // blah blah validation
-//     // log something so we know its working
-//     console.log('doing name validations on ' + name);
-
-//     // once validation is done save the new item in the req
-//     req.name = name;
-//     // go to the next thing
-//     next(); 
-// });
-
-// router.get('/hello/:name', function(req, res) {
-//     res.send('hello ' + req.name + '!');
-// });
-// app.use('/', router);
-
-// // show the form (GET http://localhost:8080/login)
-//     app.get(function(req, res) {
-//         res.send('this is the login form');
-//     })
-
-//     // process the form (POST http://localhost:8080/login)
-//     app.post(function(req, res) {
-//         console.log('processing');
-//         res.send('processing the login form!');
-//     });
-
-
+   
 
