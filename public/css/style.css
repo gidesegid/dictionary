@@ -16,12 +16,35 @@ body{
 	padding:10px 20px;
 }
 .outputDiv{
-	background-color: white;
+	
 	margin:20px 20px;
-	color:white;
+	color:black;
 }
 .result{
-	font-size: 16px;
+	font-size: 18px;
 	color: blue;
+	margin:10px 30px;
+}
+div{
+	margin:10px 30px;
+}
+.panelBody{
 	margin:10px 10px;
+	
+	background-color: grey;
+	border-bottom:solid;
+	border-color: green;
+	box-shadow: 4px 4px;
+
+
+}
+.text{
+	color:black;
+	margin:30px;
+	font-size:16px;
+}
+.btn{
+	margin:30px;
+	width:100px;
+	height: 50px
 }
