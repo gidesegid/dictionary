@@ -29,7 +29,26 @@ module.exports = function(app)
      app.get('/adminPage',function(req,res){
         res.render('adminPage.html');
     });
-     
+      app.get('/contactUs',function(req,res){
+        res.render('contactUs.html');
+    });
+      app.get('/about',function(req,res){
+        res.render('about.html');
+    });
+       app.get('/paragraph',function(req,res){
+        res.render('paragraph.html');
+    });
+     app.get('/auto',function(req,res){
+        connection.query("select * from languages",function(error,row,fields){
+        if(!!error){
+          console.log('error in query')
+        }else{
+           console.log('succesfully connected');
+           console.log(row);
+           res.json(row);
+        }
+      })
+     })
     app.get('/data',function(req,res){
   
     connection.query("select * from languages",function(error,row,fields){

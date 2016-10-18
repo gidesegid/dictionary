@@ -1,50 +1,72 @@
-body{
-	background-color: red;
-	color: blue;
-	background-image: url("http://www.entomecta.gr/wp-content/uploads/2016/02/gray-background-16-Best-Background-1.jpg");
-}
-.gide{
-	color:red;
-}
+
+
 .combobox{
 	margin:20px 20px;
 	padding:10px 20px;
-	width:200px;
+	width:350px;
 }
-.textbox{
-	margin:20px 20px;
-	padding:10px 20px;
-}
-.outputDiv{
-	
-	margin:20px 20px;
-	color:black;
-}
+
+
 .result{
 	font-size: 18px;
 	color: blue;
 	margin:10px 30px;
 }
-div{
-	margin:10px 30px;
-}
-.panelBody{
-	margin:10px 10px;
-	
-	background-color: grey;
-	border-bottom:solid;
-	border-color: green;
-	box-shadow: 4px 4px;
-
-
-}
 .text{
-	color:black;
-	margin:30px;
-	font-size:16px;
+	margin:30px 20px;
 }
+.p1{
+	margin:10px 30px;
+	font-size: 16px;
+}
+
 .btn{
 	margin:30px;
-	width:100px;
+	width:200px;
 	height: 50px
+}
+.main{
+  display: inline-block;
+  padding: 2em;
+  width: 30em;
+  margin-bottom: 5em;
+}
+
+header{
+  width: 100%;
+  height: 6em;
+  padding: 0.7em 1em 0.5em 2em;
+  color: #eee;
+  background-color: #333;
+}
+header{
+  width: 100%;
+  height: 6em;
+  padding: 0.7em 1em 0.5em 2em;
+  color: #eee;
+  background-color: 444555333;
+}
+
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+
+  font-weight: 200;
+  line-height: 4em;
+  color: #eee;
+  background-color: #44ba54;
+  text-align: center;
+}
+
+footer a{
+  color: #333;
+  font-weight: bold;
+}
+
+footer a:hover{
+  color: #b15;
+  font-weight: bold;
 }

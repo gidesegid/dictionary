@@ -1,37 +1,34 @@
-<!DOCTYPE html>
-<html ng-app="myApp2">
+<html ng-app="app">
 <head>
-	<title>admin</title>
-	<link rel="stylesheet" type="text/css" href="js/style.css">
-	<script src="js/controller.js"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="autocomplete/style.css">
+  <link rel="stylesheet" href="autocomplete/autocomplete.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
 
 </head>
-<body class="text-center" ng-controller="myController">
-
-		<div class="container">
-			<select>
-				<option>Gide segid    </option>
-			</select>
-			<input type="textbox" name="">
-
-		</div>
+<body>
 
 
-		<input type="text" keyboard-poster post-function="searchFlight" name="first_name" placeholder="Zurich, Switzerland" list="_countries" style='margin-bottom: 100px'>
-            <datalist id="_countries">
-             <select style="display: none;" id="_select" name="_select" ng-model='selectedCountry' ng-options='k as v for (k,v) in countries'></select>
-           </datalist>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="controllers/controllers.js"></script>
- 
-		<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <div ng-controller="MyCtrl">
+    <div class="main">
+     
+      <autocomplete ng-model="result" attr-placeholder="type the word..." click-activation="true" data="words" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
+      <br>
+      
+    </div>
+
+
+  </div>
+
+
+<footer>
+   
+</footer>
+
+<script type="text/javascript" src="autocomplete/autocomplete.js"></script>
+<script type="text/javascript" src="autocomplete/controller.js"></script>
 
 </body>
 </html>

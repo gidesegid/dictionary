@@ -18,42 +18,50 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
 </head>
 <body ng-controller="mycontroller">
-<a href="/adminPage">Admin me</a>
-<div class="page-header">
-  <h1>Tigrigna Translation language <small>Translate to multi languages</small></h1>
-</div>
- <div class="row">
-      <div class="panel panel-default">
-        <div class="panel-body panelBody">
-           <strong class="text">choose language</strong><br>
-           <select class="combobox" name="fromSelectedLanguageId" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
+
+<header>
+  <h1><span class="thin">Tigrigna Language Translation:</span> To MultiLanguages</h1>
+</header>
+
+ <div>
+  <p class="p1">Language translation from Tigrigna to different languages, Please have a look below, to which languages you may need to translate </p>
+    <div class="main">
+         
+          <strong class="text">From Language</strong><br>
+           <select class="combobox" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
              <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
            </select> <br>
-
-            <input class="textbox" class="form-control" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
-
-            <strong class="text">choose langauge to</strong><br>
+                <strong class="text" placeholder="type to search movies...">Enter the word</strong><br>
+            <input class="form-control text" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
+          
+            <strong class="text">To Language</strong><br>
 
             <select class="combobox" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
                  <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
             </select> <br>
-            <input type="button" class="btn btn-primary" value="Translate" ng-click="add()"><br>
+           <!-- <input type="button" class="btn btn-primary" value="Translate" ng-click="add()"><br>-->
         
            <ul class="outputDive" ng-model="inputdata">{{inputdata}}
               <li class="result" ng-repeat="data in outPut">{{data.Expr1}}</li>
            </ul>
-       </div>
     </div>
  </div>
+       <footer>
+         <a href="/contactUs">Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+         <a href="/about">About  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+         <a href="/paragraph">Converting by paragraph</a>
+          <a href="/adminPage">Admin Page</a>
+       </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="controllers/controllers.js"></script>
  
 	<!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 
 
 </body>

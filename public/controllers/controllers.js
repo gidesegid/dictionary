@@ -33,12 +33,23 @@ myApp.controller('mycontroller',function($scope,$http){
   	$scope.myData=response;
   });
 
- $scope.add=function(){
+ // $scope.add=function(){
  	
- 	$http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
+ // 	$http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
+ // 		console.log(response);
+ // 		$scope.outPut=response;
+ // 	});
+ // }
+
+
+$scope.toswitchTranslation=function(){
+
+	$http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
  		console.log(response);
  		$scope.outPut=response;
  	});
- }
+
+}
+
 
  })
