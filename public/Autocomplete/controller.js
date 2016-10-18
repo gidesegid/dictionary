@@ -7,21 +7,15 @@ app.factory('dataRetriever', function($http, $q, $timeout){
   dataRetriever.getdata = function(i) {
     var data = $q.defer();
     var words;
-    
-   // var someWords = ["The Wolverine", "The Smurfs 2", "The Mortal Instruments: City of Bones", "Drinking Buddies", "All the Boys Love Mandy Lane", "The Act Of Killing", "Red 2", "Jobs", "Getaway", "Red Obsession", "2 Guns", "The World's End", "Planes", "Paranoia", "The To Do List", "Man of Steel"];
-    http.get('/auto').success(function(response){
-      moreWords.push(response);
-      var moreWords = ["The Wolverine", "The Smurfs 2", "The Mortal Instruments: City of Bones", "Drinking Buddies", "All the Boys Love Mandy Lane", "The Act Of Killing", "Red 2", "Jobs", "Getaway", "Red Obsession", "2 Guns", "The World's End", "Planes", "Paranoia", "The To Do List", "Man of Steel", "The Way Way Back", "Before Midnight", "Only God Forgives", "I Give It a Year", "The Heat", "Pacific Rim", "Pacific Rim", "Kevin Hart: Let Me Explain", "A Hijacking", "Maniac", "After Earth", "The Purge", "Much Ado About Nothing", "Europa Report", "Stuck in Love", "We Steal Secrets: The Story Of Wikileaks", "The Croods", "This Is the End", "The Frozen Ground", "Turbo", "Blackfish", "Frances Ha", "Prince Avalanche", "The Attack", "Grown Ups 2", "White House Down", "Lovelace", "Girl Most Likely", "Parkland", "Passion", "Monsters University", "R.I.P.D.", "Byzantium", "The Conjuring", "The Internship"]
+    var json_data = {"2013-01-21":1,"2013-01-22":7};
+    var languages = [];
 
-    })
-   
-    if(i && i.indexOf('T')!=-1)
-      words=moreWords;
-    else
-      words=moreWords;
+    http.get('/auto').success(function(response){
+      languages=response
+    });
 
     $timeout(function(){
-      data.resolve(words);
+      data.resolve(languages);
     },1000);
 
     return data.promise
