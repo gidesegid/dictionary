@@ -7,6 +7,7 @@ app.factory('dataRetriever', function($http, $q, $timeout){
   dataRetriever.getdata = function(i) {
     var data = $q.defer();
     var words;
+<<<<<<< HEAD
    
     var moreWords = [];
 
@@ -17,6 +18,17 @@ app.factory('dataRetriever', function($http, $q, $timeout){
 
     $timeout(function(){
       data.resolve(moreWords);
+=======
+    var json_data = {"2013-01-21":1,"2013-01-22":7};
+    var languages = [];
+
+    http.get('/auto').success(function(response){
+      languages=response
+    });
+
+    $timeout(function(){
+      data.resolve(languages);
+>>>>>>> fix-auto-complete
     },1000);
 
     return data.promise
