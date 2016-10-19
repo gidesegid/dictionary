@@ -18,6 +18,7 @@
 .p1{
 	margin:10px 30px;
 	font-size: 16px;
+  font-family: 'Taviraj', serif;
 }
 
 .btn{
@@ -38,6 +39,7 @@ header{
   padding: 0.7em 1em 0.5em 2em;
   color: #eee;
   background-color: #333;
+  font-family: 'Bungee Inline', cursive;
 }
 header{
   width: 100%;
