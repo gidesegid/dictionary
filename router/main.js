@@ -4,7 +4,7 @@ var mysql=require('mysql');
 var connection=mysql.createConnection({
   host:'localhost',
   user:'root',
-  password:'wedisegid',
+  password:'root',
   database:'dictionary2'
 });
 connection.connect(function(error){
