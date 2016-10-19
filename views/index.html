@@ -25,21 +25,21 @@
 <body ng-controller="mycontroller">
 
 <header>
-  <h1><span class="thin">Tigrigna Translator</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tig-text">ትግርኛ &nbsp;ተርጛሚት</span></h1>
+  <h1><span class="thin">Tigrigna Translator</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tig-text">ትግርኛ &nbsp;ተርጓሚት</span></h1>
 </header>
 
  <div>
-  <p class="p1">Language translator from Tigrigna to different languages. ተርጎሚት ካብ ትግርኛ ናብ ዝተፈላለዩ ቃንቃታት</p>
+  <p class="p1">Language translator from Tigrigna to different languages. ተርጓሚት ካብ ትግርኛ ናብ ዝተፈላለዩ ቛንቛታት</p>
     <div class="main">
          
-          <strong class="text">From Language/ ካብ ቃንቃ</strong><br>
+          <strong class="text">From Language/ ካብ ቛንቛ</strong><br>
            <select class="combobox" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
              <option ng-repeat="data in myData" value="{{data.id}}">{{data.language}}</option>
            </select> <br>
                 <strong class="text" placeholder="type to search movies...">Enter the word/ ኣብዚ ዝደለኻዮ ጽሓፍ</strong><br>
             <input class="form-control text" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
           
-            <strong class="text">To Language/ ናብ ቃንቃ</strong><br>
+            <strong class="text">To Language/ ናብ ቛንቛ</strong><br>
 
             <select class="combobox" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
                  <option ng-repeat="data in myData" value="{{data.id}}">{{data.language}}</option>
