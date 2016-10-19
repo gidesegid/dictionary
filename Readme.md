@@ -2,13 +2,13 @@
 
 ##Project Overview
 
-Almost all the languages in the world are embedded in Google language translation. Despite most people in the world can translate their mother-language to different other languages, Eritreans cannot. That’s why we are really passionate to tackle this problem for Eritreans who need to translate any language to Tigrigna and vice-versa.
+Almost all the languages in the world are embedded in Google language translation. Eventhough most people in the world can translate their mother-language to different other languages, Eritreans cannot. That’s why we are really passionate to tackle this problem for Eritreans who need to translate any language to Tigrigna and vice-versa.
 
 ##Aim of the project
-To translate Tigrigna (Eritrean language) to English and possibly Dutch online.
+To translate Tigrigna (Eritrean language) to different languages particularly to Englis and Dutch.
 
 ##Development approaches of the project already done  
-There are list of words for the language English and Dutch, and there is private websites which serve as a standalone Tigrigna dictionary but this private  website has many shortcomings. So our project will eliminate all these shortcomings and will try to feel our users’ satisfactions.
+There are list of words for the language English and Dutch, and there is private websites which serve as a standalone Tigrigna dictionary but this private  website has many shortcomings. So our project will eliminate all these shortcomings and will try to satisfy tigrigna language speakers.
 
 ##Why the project is needed to be done
 Since there are many shortcomings and limitations of the previous web site of Tigrigna translation, we are excited to do a new Tigrigna dictionary with all necessary requirements.  
@@ -29,10 +29,10 @@ And we converted this pdf data to json file and so we have these words in json f
 ### Wireframe
 
 **Home Page**
-![Home Page](/doc/UserInteraction_00.jpg)
+![Home Page](public/images/frontEnd.jpg)
 
 **User Flow**
-![User Flow](/doc/UserInteraction_01.jpg)
+![User Flow](/images/frontEnd.jpg)
 
 **User Flow**
 ![User Flow](/doc/UserInteraction_02.jpg)
