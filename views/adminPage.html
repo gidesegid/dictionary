@@ -1,6 +1,6 @@
 <html ng-app="app">
 <head>
-  
+  <title>Autocomplete</title>
   <link rel="stylesheet" href="autocomplete/style.css">
   <link rel="stylesheet" href="autocomplete/autocomplete.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
@@ -8,17 +8,22 @@
 </head>
 <body>
 
-
+<header>
+  <h1><span class="thin">AngularJS autoco:</span>autocomplete</h1>
+</header>
 
 
   <div ng-controller="MyCtrl">
     <div class="main">
-     
-      <autocomplete ng-model="result" attr-placeholder="type the word..." click-activation="true" data="words" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
+      <h2>Search for new released movies:</h2>
+      <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
       <br>
-      
+      <div class="description">
+       
+        <br><br>
+        <a href="https://github.com/JustGoscha/allmighty-autocomplete"></a>
+      </div>
     </div>
-
 
   </div>
 
