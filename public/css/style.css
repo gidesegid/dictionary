@@ -18,7 +18,11 @@
 .p1{
 	margin:10px 30px;
 	font-size: 16px;
+<<<<<<< HEAD
   font-family: 'Open Sans', sans-serif;
+=======
+  font-family: 'Taviraj', serif;
+>>>>>>> newbranch
 }
 
 .btn{
@@ -33,6 +37,10 @@
   margin-bottom: 5em;
 }
 .tig-text{
+  font-size: 50px;
+}
+
+.tigrigna-text{
   font-size: 50px;
 }
 

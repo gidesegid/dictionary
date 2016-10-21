@@ -10,6 +10,7 @@
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Taviraj" rel="stylesheet">
  
 
   
@@ -25,18 +26,31 @@
 <body ng-controller="mycontroller">
 
 <header>
+
   <h1><span class="thin">Tigrigna Translator</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tig-text">ትግርኛ &nbsp;ተርጓሚት</span></h1>
 </header>
 
  <div>
   <p class="p1">Language translator from Tigrigna to different languages. ተርጓሚት ካብ ትግርኛ ናብ ዝተፈላለዩ ቛንቛታት</p>
+
+  <h1><span class="thin">Tigrigna-Translator</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span class="tigrigna-text">ትግርኛ &nbsp;&nbsp;ተርጓሚት</span></h1>
+</header>
+
+ <div>
+  <p class="p1">Language translater from Tigrigna to different languages/ ተርጓሚት ካብ ቛንቛ ትግርኛ ናብ ዝተፈላለየ ቛንቛታት</p>
+
     <div class="main">
          
           <strong class="text">From Language/ ካብ ቛንቛ</strong><br>
            <select class="combobox" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
              <option ng-repeat="data in myData" value="{{data.id}}">{{data.language}}</option>
            </select> <br>
+
                 <strong class="text" placeholder="type to search movies...">Enter the word/ ኣብዚ ዝደለኻዮ ጽሓፍ</strong><br>
+
+                <strong class="text" placeholder="type to search movies...">Enter the word/ ኣብዚ ዝደለኹሞ ቃል የእትው</strong><br>
+
             <input class="form-control text" ng-model="inputdata" ng-focus="inputTextboxfocus()"><br>
           
             <strong class="text">To Language/ ናብ ቛንቛ</strong><br>
