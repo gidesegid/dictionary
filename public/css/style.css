@@ -14,6 +14,9 @@ body{*/
 /** {
   outline: 1px dotted pink;
 }*/
+.backgroundImage{
+  background-image: url("https://image.freepik.com/free-vector/modern-abstract-background_1048-1003.jpg");
+}
 .contentLimit{
   margin: 20px 20px;
   size: 90%;
@@ -21,10 +24,7 @@ body{*/
   width: 90%;
 
 }
-.combobox{
-    width: 85%;
-    height: 80%;
-}
+
 .result{
   
   padding: 5px;
@@ -33,17 +33,22 @@ body{*/
 
 }
 
+.divgeneral{
+  margin: 50px 50px;
+  background-color: rgb(255, 255, 204);
+
+}
 .div1{
   margin:20px 30px;
   width:300px;
-  background-color:rgb(255, 204, 255);
+  background-color:rgb(255, 224, 179);
 
 
 }
 .div2{
   margin:20px 30px;
   width:300px;
-  background-color:rgb(255, 204, 255);
+  background-color:rgb(255, 235, 204);
 
 
 }
