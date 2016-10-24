@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<title></title>
+  <title></title>
   <script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="autocomplete/style.css">
   <link rel="stylesheet" href="autocomplete/autocomplete.css">
+<!--google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,38 +17,38 @@
 
 
 </head>
-<body>
+<body class="text-center">
 
 <header>
   <h1><span class="thin">Tigrigna Language Translation:</span> To MultiLanguages</h1>
 </header>
-
  <div>
-  <p class="p1">Language translation from Tigrigna to different languages, Please have a look below, to which languages you may need to translate </p>
     <div ng-controller="MyCtrl">
-       <div class="row">
-         <div class="col-lg-12 col-sm-6 col-xs-3">
-
-               <strong>From Language</strong>
-               <select class="combobox" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
-                     <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                </select>
+       <div class="row text-centere">
+         <div class="col-lg-3 col-md-6 col-sm-9 col-xs-12 div1 text-center">
+               
+                 <strong>From Language</strong><br>
+                <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="switchTranslation()">
+                   <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
+                </select><br>
+                 <label class="contentLimit">
+                   <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
+                 </label>
+               
            </div>
-          <div class="col-lg-12 col-sm-6 col-xs-3">
-
-                <strong>To Language</strong>
-                <select class="combobox" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
+          <div class="col-lg-3 col-md-6 col-sm-9 col-xs-12 div2">
+                <strong>To Language</strong><br>
+                <select class="contentLimit" name="toSelectedLanguageId" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
                     <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
                 </select>
-                <label class="text">word
-                  <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
-                </label><br><br><br>
-               <ul class="outputDive" ng-model="inputdata">{{inputdata}}
-                  <li class="result" ng-repeat="data in outPut">{{data.Expr1}}</li>
+               
+               <ul class="outPut" ng-model="inputdata">
+                  <li ng-repeat="data in outPut">{{data.Expr1}}</li>
                </ul>
            </div>
       </div>
  </div>
+
        <footer>
          <a href="/contactUs">Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
          <a href="/about">About  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -56,7 +58,7 @@
 
 
  
-	<!-- Latest compiled and minified JavaScript -->
+  <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>

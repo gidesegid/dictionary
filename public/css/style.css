@@ -1,23 +1,59 @@
+/** {
+  box-sizing: border-box;
+}
+body{*/
+/*  margin: 0;
+  padding: 0;
+}*/
+/*#wrapper{
+  background-color: gray;
+  width: 100%;
+  height: 100%
 
+}*/
+/** {
+  outline: 1px dotted pink;
+}*/
+.contentLimit{
+  margin: 20px 20px;
+  size: 90%;
+  padding: 5px;
+  width: 90%;
 
+}
 .combobox{
-	margin:20px 20px;
-	padding:10px 20px;
-	width:350px;
+    width: 85%;
+    height: 80%;
 }
-
-
 .result{
-	font-size: 18px;
-	color: blue;
-	margin:10px 30px;
+  
+  padding: 5px;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+
 }
-.text{
-	margin:30px 20px;
+
+.div1{
+  margin:20px 30px;
+  width:300px;
+  background-color:rgb(255, 204, 255);
+
+
 }
-.p1{
-	margin:10px 30px;
-	font-size: 16px;
+.div2{
+  margin:20px 30px;
+  width:300px;
+  background-color:rgb(255, 204, 255);
+
+
+}
+.outPut{
+  background-color: white;
+  box-shadow: 2px 4px;
+  color: black;
+  width:80%;
+  height: 30%;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .btn{
@@ -70,3 +106,20 @@ footer a:hover{
   color: #b15;
   font-weight: bold;
 }
+
+/** {
+  padding: 0; margin: 0;  
+}
+html {
+  height: 100.1&#37;; 
+}
+#content1 {
+  float: left;
+  width: 50%;
+  background-color: #DDD;
+}
+#content2 {
+  float: left;
+  width: 50%;
+  background-color: #CCC;
+}*/

@@ -21,27 +21,11 @@ myApp.service('myservice',function($http,$q){
 
 //CONTROLLER
 myApp.controller('mycontroller',function($scope,$http){
- //  var promise=myservice.getData();
-	// promise.then(function(data){
-	// 	$scope.myData=data;
-	// 	console.log($scope.myData);
-	// });
-
-// $scope.refresh=function(){
+ 
 	$http.get('/data').success(function(response){
   
   	$scope.myData=response;
   });
-
- // $scope.add=function(){
- 	
- // 	$http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
- // 		console.log(response);
- // 		$scope.outPut=response;
- // 	});
- // }
-
-
 $scope.toswitchTranslation=function(){
 
 	$http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
@@ -49,7 +33,59 @@ $scope.toswitchTranslation=function(){
  		$scope.outPut=response;
  	});
 
-}
-
-
+   }
  })
+
+// the service that retrieves some movie title from an url
+myApp.factory('dataRetriever', function($http, $q, $timeout){
+  var dataRetriever = new Object();
+
+ dataRetriever.getdatas = function(i) {
+    var data = $q.defer();
+    var datas;
+    var dataFromRemote;
+  $http.get('/auto').then(function(response){
+       
+       dataFromRemote = JSON.stringify((response.data).map(function(obj){ return obj.languages }));
+       // dataFromRemote=JSON.parse(response.data.languages)
+
+        console.log(dataFromRemote)
+       var moredatas=JSON.parse(dataFromRemote);     
+       console.log(moredatas)
+       if(i && i.indexOf('T')!=-1)
+         datas=moredatas;
+       else
+          datas=moredatas;
+
+    $timeout(function(){
+      data.resolve(datas);
+    },1000);
+  })
+    return data.promise
+}
+  return dataRetriever;
+});
+
+myApp.controller('MyCtrl', function($scope, dataRetriever){
+  $scope.datas = dataRetriever.getdatas("...");
+  $scope.datas.then(function(data){
+    $scope.datas = data;
+  });
+
+  $scope.getdatas = function(){
+    return $scope.datas;
+  }
+
+  $scope.doSomething = function(typedthings){
+    console.log("Do something like reload data with this: " + typedthings );
+    $scope.newdatas = dataRetriever.getdatas(typedthings);
+    $scope.newdatas.then(function(data){
+      $scope.datas = data;
+    });
+  }
+
+  $scope.doSomethingElse = function(suggestion){
+    console.log("Suggestion selected: " + suggestion );
+  }
+
+});
