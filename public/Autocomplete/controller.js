@@ -45,6 +45,7 @@ app.controller('MyCtrl',['$scope','$http','dataRetriever', function($scope,$http
         var dataPromise = dataRetriever.getdatas($scope.fromSelectedLanguageId);
         dataPromise.then(function(data){
         $scope.datas = data;
+        
       });
     } 
 }]);

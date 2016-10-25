@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="autocomplete/style.css">
   <link rel="stylesheet" href="autocomplete/autocomplete.css">
+  <script type="text/javascript" src="js/code.js"></script>
 <!--google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
@@ -24,8 +25,9 @@
               <header>
                  <h1>Tigrigna Translation ትርጎማ ቛንቋ ትግርኛ </h1>
               </header>
-          <div class="divgeneral container">
-             <div class="col-lg-3 col-md-8 col-sm-10 col-xs-12 div1 text-center">
+              <p id="pIdTitle">this is tigrigna translation</p>
+          <div class="divgeneral">
+             <div class="col-lg-3 col-md-6 col-sm-10 col-xs-12 div1 text-center">
                   <strong>From Language</strong><br>
                   <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="fromSwitchTranslation()">
                      <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
@@ -34,7 +36,7 @@
                    <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
                   </label>
              </div>
-             <div class="col-lg-3 col-md-8 col-sm-10 col-xs-12 div2">
+             <div class="col-lg-3 col-md-6 col-sm-10 col-xs-12 div2">
                   <strong>To Language</strong><br>
                   <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
                       <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
