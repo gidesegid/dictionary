@@ -4,7 +4,7 @@ var mysql=require('mysql');
 var connection=mysql.createConnection({
   host:'localhost',
   user:'root',
-  password:'root',
+  password:'wedisegid',
   database:'dictionary2'
 });
 connection.connect(function(error){
@@ -38,8 +38,12 @@ module.exports = function(app)
        app.get('/paragraph',function(req,res){
         res.render('paragraph.html');
     });
-     app.get('/auto',function(req,res){
-        connection.query("select * from languages",function(error,row,fields){
+       app.get('/p2',function(req,res){
+        res.render('index2.html');
+    });
+     app.get('/auto/:id',function(req,res){
+        var id=req.params.id;
+        connection.query("select * from words WHERE languages_id=?",id,function(error,row,fields){
         if(!!error){
           console.log('error in query')
         }else{

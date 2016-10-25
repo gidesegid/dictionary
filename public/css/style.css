@@ -1,28 +1,65 @@
-
-
-.combobox{
-	margin:20px 20px;
-	padding:10px 20px;
-	width:350px;
+/** {
+  box-sizing: border-box;
 }
+body{*/
+/*  margin: 0;
+  padding: 0;
+}*/
+/*#wrapper{
+  background-color: gray;
+  width: 100%;
+  height: 100%
 
+}*/
+/** {
+  outline: 1px dotted pink;
+}*/
+.backgroundImage{
+  background-image: url("https://image.freepik.com/free-vector/modern-abstract-background_1048-1003.jpg");
+}
+.contentLimit{
+  margin: 20px 20px;
+  size: 90%;
+  padding: 5px;
+  width: 90%;
+
+}
 
 .result{
-	font-size: 18px;
-	color: blue;
-	margin:10px 30px;
+  
+  padding: 5px;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+
 }
-.text{
-	margin:30px 20px;
+
+.divgeneral{
+  margin: 50px 50px;
+  background-color: rgb(255, 255, 204);
+  border-top: solid;
+
 }
-.p1{
-	margin:10px 30px;
-	font-size: 16px;
-<<<<<<< HEAD
-  font-family: 'Open Sans', sans-serif;
-=======
-  font-family: 'Taviraj', serif;
->>>>>>> newbranch
+.div1{
+  margin:20px 30px;
+  width:300px;
+  background-color:rgb(255, 224, 179);
+
+
+}
+.div2{
+  margin:20px 30px;
+  width:300px;
+  background-color:rgb(255, 235, 204);
+
+
+}
+.outPut{
+  background-color: white;
+  box-shadow: 2px 4px;
+  color: black;
+  width:80%;
+  height: 30%;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .btn{
@@ -36,13 +73,6 @@
   width: 30em;
   margin-bottom: 5em;
 }
-.tig-text{
-  font-size: 50px;
-}
-
-.tigrigna-text{
-  font-size: 50px;
-}
 
 header{
   width: 100%;
@@ -50,7 +80,6 @@ header{
   padding: 0.7em 1em 0.5em 2em;
   color: #eee;
   background-color: #333;
-  font-family: 'Bungee Inline', cursive;
 }
 header{
   width: 100%;
@@ -83,3 +112,20 @@ footer a:hover{
   color: #b15;
   font-weight: bold;
 }
+
+/** {
+  padding: 0; margin: 0;  
+}
+html {
+  height: 100.1&#37;; 
+}
+#content1 {
+  float: left;
+  width: 50%;
+  background-color: #DDD;
+}
+#content2 {
+  float: left;
+  width: 50%;
+  background-color: #CCC;
+}*/

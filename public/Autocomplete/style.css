@@ -162,7 +162,7 @@ body{
   background: url('../sprinkles.png') repeat;
 }
 .main{
-  display: inline-block;
+  display:block;
   padding: 2em;
   width: 30em;
   margin-bottom: 5em;
