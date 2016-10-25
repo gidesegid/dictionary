@@ -9,5 +9,6 @@ app.set('views',__dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname+'/public'));
 http://localhost:3000/css/style.css
+
 app.listen(3000);
 console.log("server is running");

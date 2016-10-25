@@ -1,35 +1,41 @@
 
-function switchTranslation(){
+function fromSwitchTranslation(){
         /*select language from combobox.index 0 indicates the first order from the list which is english to tigrigna
         you can switch also to the second list order of the combobox content index 1 Tigrigna to enlglish.
         when selection selected all the page content  will be converted to the selected language.*/
-  var selIdx = document.getElementById("comboboxId1").selectedIndex;
+ //  var selIdx = document.getElementById("comboboxId1").selectedIndex;
 
   
- switch(selIdx){
-        case 0:
-        //the english-Tigrigna language selection
-         document.getElementById("pIdTitle").innerHTML="<b>"+"The language you need to translate from "+"</b>";
-         document.getElementById("pIdInput").innerHTML="Type the word below please";
-         document.getElementById("pIdResult").innerHTML="Here below is the translated word";
-         document.getElementById("btnId1").innerHTML="Translate";
-         document.getElementById("txtInputId").value="";
-         document.getElementById("txtResultId").value="";
-        break;
-        case 1:
-        //the Tigrigna-English language selection
-        document.getElementById("pIdTitle").innerHTML="ክትቅይርዎ ደሊኹም ዘለኹም ቓንቓ ";
-        document.getElementById("pIdInput").innerHTML="ክትርጎሞልኩም ዝደለኹሞ ቃል ኣብዚ የእትዉ።";
-        document.getElementById("pIdResult").innerHTML="ትርጉም ናይ ዘእተኹሞ ቃል እንሆ።";
-        document.getElementById("btnId1").innerHTML="ተርጉም";
-         document.getElementById("txtInputId").value="";
-         document.getElementById("txtResultId").value="";
-        break;
+ // switch(selIdx){
+ //        case 0:
+ //        //the english-Tigrigna language selection
+ //         document.getElementById("pIdTitle").innerHTML="<b>"+"The language you need to translate from "+"</b>";
+ //         document.getElementById("pIdInput").innerHTML="Type the word below please";
+ //         document.getElementById("pIdResult").innerHTML="Here below is the translated word";
+ //         document.getElementById("btnId1").innerHTML="Translate";
+ //         document.getElementById("txtInputId").value="";
+ //         document.getElementById("txtResultId").value="";
+ //        break;
+ //        case 1:
+ //        //the Tigrigna-English language selection
+ //        document.getElementById("pIdTitle").innerHTML="ክትቅይርዎ ደሊኹም ዘለኹም ቓንቓ ";
+ //        document.getElementById("pIdInput").innerHTML="ክትርጎሞልኩም ዝደለኹሞ ቃል ኣብዚ የእትዉ።";
+ //        document.getElementById("pIdResult").innerHTML="ትርጉም ናይ ዘእተኹሞ ቃል እንሆ።";
+ //        document.getElementById("btnId1").innerHTML="ተርጉም";
+ //         document.getElementById("txtInputId").value="";
+ //         document.getElementById("txtResultId").value="";
+ //        break;
+ var skillsSelect = document.getElementById("comboboxId1");
+var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
+console.log("this is from code"+selectedText);
+if(selectedText="Tigrigna"){
+ document.getElementById("pIdTitle").innerHTML="<b>"+"እዚ ቃንቃ ትግርና ኢዩ "+"</b>";
  }
+
  
 }
-function switchTranslation2(){
-  var selIdLanguageParagraph = document.getElementById("languageInputId").selectedIndex;
+function toswitchTranslation(){
+  var selIdLanguageParagraph = document.getElementById("comboboxId2").selectedIndex;
  switch(selIdLanguageParagraph){
   case 0:
          document.getElementById("pLanId").innerHTML="Write a sentence here.";
