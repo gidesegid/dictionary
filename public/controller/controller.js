@@ -1,7 +1,6 @@
 var app = angular.module('app', ['autocomplete']);
 
-// the service that retrieves some movie title from an url
-//module.value('myprovider',"provider value");
+//service
 app.factory('dataRetriever', function($http,$q, $timeout){
   var dataRetriever = new Object();
  dataRetriever.getdatas = function(fromSelectedLanguageId) {
@@ -21,6 +20,10 @@ app.factory('dataRetriever', function($http,$q, $timeout){
 }
   return dataRetriever;
 });
+
+
+//controller
+
 app.controller('MyCtrl',['$scope','$http','dataRetriever', function($scope,$http, dataRetriever){
           $scope.myData=[];
           $scope.datas=[];
