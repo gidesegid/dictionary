@@ -51,4 +51,9 @@ app.controller('MyCtrl',['$scope','$http','dataRetriever', function($scope,$http
         
       });
     } 
+    $scope.toswitchTranslation=function(){
+       $http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
+       $scope.outPut=response;
+       });
+    }
 }]);
