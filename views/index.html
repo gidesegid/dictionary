@@ -19,26 +19,43 @@
     <div ng-controller="MyCtrl">
         <div id="wrapper">
             <header>
-            <div id="header"><h1>Tigrigna Translation ትርጎማ ቛንቛ ትግርኛ </h1></div>
-                
+                <div id="header">
+                    <div class="head" id="one">
+                        <h1>Tigrigna <br> Translation</h1></div>
+                    <div class="head" id="two">
+                        <h1>ትርጎማ<br> ቛንቛ ትግርኛ</h1></div>
+                </div>
             </header>
             <main>
                 <div class="mainBox">
                     <div class="toBox">
-                        <p class="langSelector">From Language / ካብ ቛንቛ </p>
-                        <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="fromSwitchTranslation()">
+                        <h2 class="langSelector">From | ካብ</h2>
+                        <!-- <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="fromSwitchTranslation()">
                             <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                        </select>
+                        </select> -->
+                        <div class="butwrap">
+                            <div class="butbox">
+                                <button class="butns">English</button>
+                                <button class="butns">Dutch</button>
+                                <button class="butns">Tigrigna</button>
+                            </div>
+                        </div>
                         <label class="contentLimit">
                             <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
                         </label>
                     </div>
                     <div class="toBox">
-                        <p class="langSelector">To Language / ናብ ቛንቛ</p>
-                        <br>
-                        <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
+                        <h2 class="langSelector">To | ናብ</h2>
+                        <!-- <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
                             <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                        </select>
+                        </select> -->
+                        <div class="butwrap">
+                            <div class="butbox">
+                                <button class="butns">English</button>
+                                <button class="butns">Dutch</button>
+                                <button class="butns">Tigrigna</button>
+                            </div>
+                        </div>
                         <ul class="contentLimit outPut" ng-model="inputdata">
                             <li ng-repeat="data in outPut">{{data.Expr1}}</li>
                         </ul>
@@ -52,14 +69,9 @@
                 <a href="/adminPage">Admin Page</a>
             </footer>
         </div>
-       
- 
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-
-<script type="text/javascript" src="controller/autocomplete.js"></script>
-<script type="text/javascript" src="controller/controller.js"></script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script type="text/javascript" src="controller/autocomplete.js"></script>
+        <script type="text/javascript" src="controller/controller.js"></script>
 </body>
 
 </html>
