@@ -52,56 +52,8 @@
                 <a href="/adminPage">Admin Page</a>
             </footer>
         </div>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-        <script type="text/javascript" src="controller/autocomplete.js"></script>
-        <script type="text/javascript" src="controller/controller.js"></script>
-
-
-       <div class="row">
-              <header>
-                 <h1>Tigrigna Translation ትርጎማ ቛንቛ ትግርኛ </h1>
-              </header>
-              
-          <div class="mainBox">
-             <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 toBox">
-             <p class= "langSelector">From Language / ካብ ቛንቛ </p<br>
-                  <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="fromSwitchTranslation()">
-                     <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                  </select><br>
-                  <label class="contentLimit">
-                   <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
-                  </label>
-             </div>
-             <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 toBox">
-                <p class= "langSelector">To Language / ናብ ቛንቛ</p><br>
-                <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
-                    <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                </select>
-                 <table class="table">
-                     <tbody>
-                       <tr ng-repeat="data in outPut">
-                          <td>{{data.Expr1}}</td>
-                       </tr>
-                     </tbody>
-                  </table>
-             </div>
-          </div>
-       </div>
-    
-
-       <footer>
-         <a href="/contactUs">Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-         <a href="/about">About  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-         <a href="/paragraph">Paragraph   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-          <a href="/adminPage">Admin Page</a>
-       </footer>
-
-
+       
  
-  <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
