@@ -15,6 +15,10 @@ a:active {
   outline: 0;
 }
 
+input{
+  border:none;
+  font-family: 'Abhaya Libre', serif;
+}
 
 /* Generic classes */
 .hide { /* Hide stuff without resorting to display:none; */
