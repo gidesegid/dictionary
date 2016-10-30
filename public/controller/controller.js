@@ -27,6 +27,11 @@ app.factory('dataRetriever', function($http,$q, $timeout){
 app.controller('MyCtrl',['$scope','$http','dataRetriever', function($scope,$http, dataRetriever){
           $scope.myData=[];
           $scope.datas=[];
+          $scope.languageFrom=null;
+          $scope.languageTo=null;
+
+          $scope.console = console.log;
+
   $scope.getdatas = function(){
     return $scope.datas;
   }
@@ -45,7 +50,8 @@ app.controller('MyCtrl',['$scope','$http','dataRetriever', function($scope,$http
   }
 
   $scope.fromSwitchTranslation=function(fromSelectedLanguageId){
-        var dataPromise = dataRetriever.getdatas($scope.fromSelectedLanguageId);
+    console.log(fromSelectedLanguageId);
+        var dataPromise = dataRetriever.getdatas(fromSelectedLanguageId);
         dataPromise.then(function(data){
         $scope.datas = data;
         
