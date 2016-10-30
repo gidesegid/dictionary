@@ -43,7 +43,7 @@ module.exports = function(app)
     });
      app.get('/auto/:id',function(req,res){
         var id=req.params.id;
-        connection.query("select * from words WHERE languages_id=?",id,function(error,row,fields){
+        connection.query("select * from words WHERE languages_id=? LIMIT 100",id,function(error,row,fields){
         if(!!error){
           console.log('error in query')
         }else{

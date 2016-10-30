@@ -28,7 +28,7 @@
               
           <div class="mainBox">
              <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 toBox">
-<p class= "langSelector">From Language / ካብ ቛንቛ </p<br>
+             <p class= "langSelector">From Language / ካብ ቛንቛ </p<br>
                   <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="fromSwitchTranslation()">
                      <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
                   </select><br>
@@ -37,17 +37,21 @@
                   </label>
              </div>
              <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12 toBox">
-                  <p class= "langSelector">To Language / ናብ ቛንቛ</p><br>
-                  <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
-                      <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                  </select>
-                 <ul class="contentLimit outPut" ng-model="inputdata">
-                    <li ng-repeat="data in outPut">{{data.Expr1}}</li>
-                 </ul>
+                <p class= "langSelector">To Language / ናብ ቛንቛ</p><br>
+                <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
+                    <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
+                </select>
+                 <table class="table">
+                     <tbody>
+                       <tr ng-repeat="data in outPut">
+                          <td>{{data.Expr1}}</td>
+                       </tr>
+                     </tbody>
+                  </table>
              </div>
           </div>
        </div>
-    </div>
+    
 
        <footer>
          <a href="/contactUs">Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
