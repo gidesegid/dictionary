@@ -25,7 +25,7 @@ body {
 }
 
 .contentLimit {
-    margin: 20px 20px;
+    margin: 10px 10px;
     size: 90%;
     padding: 5px;
     width: 90%;
@@ -124,7 +124,7 @@ footer a:hover {
 }
 .toBox {
     background-color: #F0FAF3;
-    width: 250px;
+    width: 400px;
     padding: 10px;
     margin: 0 auto;
 }
@@ -137,9 +137,9 @@ footer a:hover {
  margin: 0 auto;
 }
 .butbox{
-    width: 223px;
+    width: 350px;
     display: inline-block;
-    background: yellow;
+    background: rgb(240,349,360);
 }
 
 .butns{
@@ -148,8 +148,18 @@ footer a:hover {
     background: white;
     border: none;
 }
-
-
+.clicked{
+  background-color: red;
+}
+.red{
+    color:red;
+  }
+  .blue{
+    color:blue;
+  }
+.class{
+  background-color: red;
+}
 /*@media and screen(min-width: 320px){
   .toBox{
     

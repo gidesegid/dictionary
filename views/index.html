@@ -30,35 +30,46 @@
                 <div class="mainBox">
                     <div class="toBox">
                         <h2 class="langSelector">From | ካብ</h2>
-                        <!-- <select class="contentLimit" name="fromSelectedLanguageId" id="comboboxId1" ng-model="fromSelectedLanguageId" ng-change="fromSwitchTranslation()">
-                            <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                        </select> -->
+                        
                         <div class="butwrap">
                             <div class="butbox">
-                                <button ng-click="fromSwitchTranslation(1)" class="butns">English</button>
-                                <button ng-click="fromSwitchTranslation(2)" class="butns">Dutch</button>
-                                <button ng-click="fromSwitchTranslation(3)" class="butns">Tigrigna</button>
+                                <button ng-click="fromSwitchTranslation(1)" onclick="english()" id="1"class="butns">English</button>
+                                <button ng-click="fromSwitchTranslation(2)" onclick="dutch()" id="2" class="butns">Dutch</button>
+                                <button ng-click="fromSwitchTranslation(3)" onclick="germen()" id="3" class="butns">germen</button>
+                                 <button ng-click="fromSwitchTranslation(4)" onclick="french()" id="4" class="butns">French</button>
+                                <button ng-click="fromSwitchTranslation(5)" onclick="italian()" id="5" class="butns">italian</button>
+                                <button ng-click="fromSwitchTranslation(6)" onclick="norway()" id="6" class="butns">norwey</button>
+                                 <button ng-click="fromSwitchTranslation(7)" onclick="tigrigna()" id="7" class="butns">tigrigna</button>
+                                 <button ng-click="fromSwitchTranslation(8)" onclick="sweeden()" id="8" class="butns">sweeden</button>
                             </div>
                         </div>
+
                         <label class="contentLimit">
                             <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
                         </label>
                     </div>
                     <div class="toBox">
                         <h2 class="langSelector">To | ናብ</h2>
-                        <!-- <select class="contentLimit" name="toSelectedLanguageId" id="comboboxId2" ng-model="toSelectedLanguageId" ng-change="toswitchTranslation()">
-                            <option ng-repeat="data in myData" value="{{data.id}}">{{data.languages}}</option>
-                        </select> -->
                         <div class="butwrap">
                             <div class="butbox">
-                                <button ng-click="toswitchTranslation(1)" class="butns">English</button>
-                                <button ng-click="toswitchTranslation(2)" class="butns">Dutch</button>
-                                <button ng-click="toswitchTranslation(3)" class="butns">Tigrigna</button>
+                                <button ng-click="toswitchTranslation(1)" ng-model="english" onclick="toEnglish()" id="to1" class="butns">English</button>
+                                <button ng-click="toswitchTranslation(2)" ng-model="dutch" onclick="toDutch()" id="to2" class="butns">Dutch</button>
+                                <button ng-click="toswitchTranslation(3)" ng-model="germen" onclick="toGerman()" id="to3" class="butns">german</button>
+                                <button ng-click="toswitchTranslation(4)" ng-model="french" id="to4" onclick="toFrench()" class="butns">French</button>
+                                <button ng-click="toswitchTranslation(5)" ng-model="italian"  onclick="toItalian()" id="to5" class="butns">italian</button>
+                               <button ng-click="toswitchTranslation(6)" ng-model="norway" onclick="toNorway()" id="to6" class="butns">norway</button>
+                                <button ng-click="toswitchTranslation(7)" ng-model="tigrigna" onclick="toTigrigna()" id="to7" class="butns">tigrigna</button>
+                                <button ng-click="toswitchTranslation(8)" ng-model="sweeden" onclick="toSweeden()" id="to8" class="butns">sweeden</button>
                             </div>
                         </div>
-                        <ul class="contentLimit outPut" ng-model="inputdata">
-                            <li ng-repeat="data in outPut">{{data.Expr1}}</li>
-                        </ul>
+
+                         <table class="table">
+                              <tbody>
+                                   <tr ng-repeat="data in outPut">
+                                      <td>{{data.Expr1}}</td>
+                                   </tr>
+                             </tbody>
+                       </table>
                     </div>
                 </div>
             </main>
