@@ -18,7 +18,7 @@
 <body>
     <div ng-controller="MyCtrl">
         <div id="wrapper">
-            <header>
+            <header class="text-center">
                 <div id="header">
                     <div class="head" id="one">
                         <h1>Tigrigna <br> Translation</h1></div>
@@ -56,9 +56,13 @@
                                 <button ng-click="toswitchTranslation(3)" class="butns">Tigrigna</button>
                             </div>
                         </div>
-                        <ul class="contentLimit outPut" ng-model="inputdata">
-                            <li ng-repeat="data in outPut">{{data.Expr1}}</li>
-                        </ul>
+                         <table class="table">
+                              <tbody>
+                                   <tr ng-repeat="data in outPut">
+                                      <td>{{data.Expr1}}</td>
+                                   </tr>
+                             </tbody>
+                       </table>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -66,8 +70,6 @@
             <footer>
                 <a href="/contactUs">Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 <a href="/about">About  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="/paragraph">Paragraph   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="/adminPage">Admin Page</a>
             </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
