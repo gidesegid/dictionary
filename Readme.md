@@ -31,14 +31,14 @@ And we converted this pdf data to json file and so we have these words in json f
 **Home Page**
 ![Home Page](public/images/frontEnd.jpg)
 
-**User Flow**
-![User Flow](/images/frontEnd.jpg)
+**Architecture**
+![User Flow](public/images/Architecture.jpg)
 
 **User Flow**
-![User Flow](/doc/UserInteraction_02.jpg)
+![User Flow](public/images/UserInteraction_01.jpg)
 
 **User Flow**
-![User Flow](/doc/UserInteraction_03.jpg)
+![User Flow](public/images/UserInteraction_02.jpg)
 
 ###Framework
 The project will be a client-server application. It will has both backend and front end development.  
@@ -47,12 +47,7 @@ Mysql and Node.js
 **Front end:**
 HTML, CSS and AngularJS   
 **Design**
-![User Flow](/doc/Tigrina to multiLanguage translator design.jpg )
-
-**Gide Segid and Hruy Weldemichael**
-
-
-
+![User Flow](public/images/sketch.jpg )
 
 # Dictionary Project
 
@@ -71,3 +66,4 @@ HTML, CSS and AngularJS
 - response the output to the user
 - display the resul on the browser
 
+**Gide Segid and Hruy Weldemichael**
