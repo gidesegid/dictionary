@@ -5,7 +5,7 @@
 Almost all the languages in the world are embedded in Google language translation. Eventhough most people in the world can translate their mother-language to different other languages, Eritreans cannot. That’s why we are really passionate to tackle this problem for Eritreans who need to translate any language to Tigrigna and vice-versa.
 
 ##Aim of the project
-To translate Tigrigna (Eritrean language) to different languages particularly to Englis and Dutch.
+To translate Tigrigna (Eritrean language) to different languages particularly to English and Dutch.
 
 ##Development approaches of the project already done  
 There are list of words for the language English and Dutch, and there is private websites which serve as a standalone Tigrigna dictionary but this private  website has many shortcomings. So our project will eliminate all these shortcomings and will try to satisfy tigrigna language speakers.
@@ -49,11 +49,6 @@ HTML, CSS and AngularJS
 **Design**
 ![User Flow](/doc/Tigrina to multiLanguage translator design.jpg )
 
-**Gide Segid and Hruy Weldemichael**
-
-
-
-
 # Dictionary Project
 
 ## To Do
@@ -70,4 +65,10 @@ HTML, CSS and AngularJS
   - filter the result to the amount of words needed
 - response the output to the user
 - display the resul on the browser
+
+**Gide Segid and Hruy Weldemichael**
+
+
+
+
 
