@@ -32,7 +32,7 @@ And we converted this pdf data to json file and so we have these words in json f
 ![Home Page](public/images/frontEnd.jpg)
 
 **Architecture**
-![User Flow](public/images/Architecture.jpg)
+![User Flow](public/images/architecture.jpg)
 
 **User Flow**
 ![User Flow](public/images/UserInteraction_01.jpg)
