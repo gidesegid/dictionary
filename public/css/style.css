@@ -33,7 +33,7 @@ body {
 }
 
 .mainBox {
-    background-color: rgb(255, 255, 204);
+    /*background-color: rgb(255, 255, 204);*/
     width: 280px;
     margin: 0 auto;
 }
@@ -44,14 +44,17 @@ body {
     background-color: #F0FAF3;
 }
 
-.outPut {
+.table {
     /*background-color: white;
   box-shadow: 2px 4px;
   color: black;
   width:80%;
   height: 80%;*/
+    font-size: 20px;
     font-family: 'Abhaya Libre', serif;
-    padding-bottom: 50px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-top: 20px;
 }
 
 .btn {
@@ -123,6 +126,7 @@ footer a:hover {
     width: 250px;
     padding: 10px;
     margin: 20px auto;
+    height: 190px;
 }
 
 .toBox h2 {
@@ -136,15 +140,16 @@ footer a:hover {
 .butbox {
     width: 223px;
     display: inline-block;
-    background: yellow;
+   /* background: yellow;*/
 }
 
 .butns {
     padding: 5px;
     margin: 2px 7px;
-    background: white;
+    /*background: white;*/
     border: 1px solid white;
     border-radius: 8px;
+    /*background-color: #e7e7e7; color: black;*/
 }
 
 .clear{
