@@ -51,14 +51,18 @@
                         </select> -->
                         <div class="butwrap">
                             <div class="butbox">
-                                <button ng-click="toswitchTranslation(1)" class="butns">English</button>
-                                <button ng-click="toswitchTranslation(2)" class="butns">Dutch</button>
-                                <button ng-click="toswitchTranslation(3)" class="butns">Tigrigna</button>
+                                <button ng-click="toswitchTranslation(1)" ng-model="english" onclick="toEnglish()" id="to1" class="butns">English</button>
+                                <button ng-click="toswitchTranslation(2)" ng-model="dutch" onclick="toDutch()" id="to2" class="butns">Dutch</button>
+                                <button ng-click="toswitchTranslation(3)" ng-model="tigrigna" onclick="toTigrigna()" id="to3" class="butns">Tigrigna</button>
                             </div>
                         </div>
-                        <ul class="contentLimit outPut" ng-model="inputdata">
-                            <li ng-repeat="data in outPut">{{data.Expr1}}</li>
-                        </ul>
+                         <table class="table">
+                              <tbody>
+                                   <tr ng-repeat="data in outPut">
+                                      <td>{{data.Expr1}}</td>
+                                   </tr>
+                             </tbody>
+                       </table>
                     </div>
                     <div class="clear"></div>
                 </div>
