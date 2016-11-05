@@ -124,7 +124,7 @@ function toTigrigna(){
 }
 
 function english(){
-  console.log("english is cliecked");
+  console.log("english is clicked");
   document.getElementById("1").style.color='blue';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
@@ -150,11 +150,7 @@ function tigrigna(){
   console.log("tigrigna is clicked");
    document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
-<<<<<<< HEAD
   document.getElementById("3").style.color='blue';
-=======
-  document.getElementById("3").style.color='red';
->>>>>>> c37104d3a798b8740241fc990a58d6f0b537cc7c
   // document.getElementById("4").style.color='black';
   // document.getElementById("5").style.color='black';
   // document.getElementById("6").style.color='black';
