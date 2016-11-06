@@ -2,16 +2,17 @@ var app = angular.module('app', ['autocomplete']);
 
 //service
 app.factory('dataRetriever', function($http,$q, $timeout){
-  var dataRetriever = new Object();
- dataRetriever.getdatas = function(fromSelectedLanguageId) {
-    var data = $q.defer();
-    var datas;
-    var dataFromRemote;
-    console.log("from factory"+fromSelectedLanguageId);
-  $http.get('/auto/'+fromSelectedLanguageId).then(function(response){
-       dataFromRemote = JSON.stringify((response.data).map(function(obj){ return obj.text }));
-       var datas=JSON.parse(dataFromRemote); 
 
+  var dataRetriever = new Object();
+
+ dataRetriever.getdatas = function(languages,inputdata) {
+    var data = $q.defer();
+    var datas=null;
+    var dataFromRemote;
+  $http.get('/auto/'+languages+'/'+inputdata).then(function(response){
+       dataFromRemote = JSON.stringify((response.data).map(function(obj){ return obj.word }));
+       var datas=JSON.parse(dataFromRemote); 
+       
     $timeout(function(){
       data.resolve(datas);
     },1000);
@@ -23,58 +24,50 @@ app.factory('dataRetriever', function($http,$q, $timeout){
 
 
 //controller
-
 app.controller('MyCtrl',['$scope','$http','dataRetriever', function($scope,$http, dataRetriever){
+          $http.get('/languages').success(function(response){
+       $scope.myData=response;
+      });
+
           $scope.myData=[];
-          $scope.datas=[];
           $scope.fromSwitchTranslation=null;
           $scope.toswitchTranslation=null;
-
-         // $scope.console = console.log;
-
-
-  $scope.getdatas = function(){
-    return $scope.datas;
-  }
-  $http.get('/data').success(function(response){
-   $scope.myData=response;
-  });
-
-  $scope.doSomething = function(typedthings){
-    $http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+$scope.toSelectedLanguageId).success(function(response){
-    $scope.outPut=response;
-  });
-  }
-
-  $scope.doSomethingElse = function(suggestion){
-    console.log("Suggestion selected: " + suggestion );
-  }
-  $scope.isActive = false;
-  $scope.fromSwitchTranslation=function(fromSelectedLanguageId){
-    console.log(fromSelectedLanguageId);
- 
-    $scope.fromSelectedLanguageId=fromSelectedLanguageId;
-    console.log("from scope"+$scope.fromSelectedLanguageId)
-        var dataPromise = dataRetriever.getdatas(fromSelectedLanguageId);
+  //retrieve languages
+     
+//filling data from data base to autocomplete textfield
+  $scope.fillData = function(typedthings,fromSelectedLanguageId,inputdata){
+     var dataPromise = dataRetriever.getdatas($scope.languages,$scope.inputdata);
+     $scope.datas=null;
         dataPromise.then(function(data){
         $scope.datas = data;
-        
-      });
-      if(fromSelectedLanguageId){
-
-      }
+    });
+  }
+//data selection from autocomplete
+  $scope.dataSelection = function(suggestion){
+    $scope.datas=null;
+     $http.get('/word/'+$scope.languages+'/'+suggestion).then(function(response){
+       valueFromRemote = JSON.stringify((response.data).map(function(obj){ return obj.wordValueId }));
+       $scope.datas=JSON.parse(valueFromRemote);
+      $scope.value=response.data[0].wordValueId;
+  })
+}
+  //from languages
+  $scope.fromSwitchTranslation=function(fromSelectedLanguageId){
+    $scope.languages=fromSelectedLanguageId;
   } 
 
-    $scope.toswitchTranslation=function(toswitchTranslation){
-      console.log("from language"+ $scope.fromSelectedLanguageId)
-      console.log("to language id"+toswitchTranslation)
-       $http.get('/dataw/'+$scope.fromSelectedLanguageId+'/'+$scope.inputdata+'/'+toswitchTranslation).success(function(response){
+//to languages 
+    $scope.toswitchTranslation=function(toswitchTranslationId){
+       $http.get('/word2/'+toswitchTranslationId+'/'+$scope.value).success(function(response){
        $scope.outPut=response;
        });
     }
 }]);
+
+
+
+
 function toEnglish(){
-  console.log("english is cliecked");
   document.getElementById("to1").style.color='red';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='black';
@@ -86,7 +79,6 @@ function toEnglish(){
 
 }
 function toDutch(){
-  console.log("dutch is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='red';
   document.getElementById("to3").style.color='black';
@@ -98,7 +90,6 @@ function toDutch(){
 
 }
 function toTigrigna(){
-  console.log("tigrigna is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='black';
@@ -110,7 +101,6 @@ function toTigrigna(){
 
 }
 function toFrench(){
-  console.log("french is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='black';
@@ -122,7 +112,6 @@ function toFrench(){
 
 }
 function toGerman(){
-  console.log("germen is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='red';
@@ -134,7 +123,6 @@ function toGerman(){
 
 }
 function toItalian(){
-  console.log("italian is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='black';
@@ -145,7 +133,6 @@ function toItalian(){
   document.getElementById("to8").style.color='black';
 }
 function toNorway(){
-  console.log("italian is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='black';
@@ -156,7 +143,6 @@ function toNorway(){
   document.getElementById("to8").style.color='black';
 }
 function toSweeden(){
-  console.log("toSweeden is clicked");
   document.getElementById("to1").style.color='black';
   document.getElementById("to2").style.color='black';
   document.getElementById("to3").style.color='black';
@@ -168,7 +154,6 @@ function toSweeden(){
 }
 
 function english(){
-  console.log("english is cliecked");
   document.getElementById("1").style.color='red';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
@@ -177,11 +162,9 @@ function english(){
   document.getElementById("6").style.color='black';
   document.getElementById("7").style.color='black';
   document.getElementById("8").style.color='black';
-
 }
 function dutch(){
-  console.log("dutch is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='red';
   document.getElementById("3").style.color='black';
   document.getElementById("4").style.color='black';
@@ -191,8 +174,7 @@ function dutch(){
    document.getElementById("8").style.color='black';
 }
 function tigrigna(){
-  console.log("tigrigna is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
   document.getElementById("4").style.color='black';
@@ -202,8 +184,7 @@ function tigrigna(){
   document.getElementById("8").style.color='black';
 }
 function french(){
-  console.log("french is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
   document.getElementById("4").style.color='red';
@@ -213,8 +194,7 @@ function french(){
   document.getElementById("8").style.color='black';
 }
 function germen(){
-  console.log("germen is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='red';
   document.getElementById("4").style.color='black';
@@ -224,8 +204,7 @@ function germen(){
   document.getElementById("8").style.color='black';
 }
 function italian(){
-  console.log("italian is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
   document.getElementById("4").style.color='black';
@@ -235,8 +214,7 @@ function italian(){
    document.getElementById("8").style.color='black';
 }
 function norway(){
-  console.log("italian is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
   document.getElementById("4").style.color='black';
@@ -246,8 +224,7 @@ function norway(){
    document.getElementById("8").style.color='black';
 }
 function sweeden(){
-  console.log("sweeden is clicked");
-   document.getElementById("1").style.color='black';
+  document.getElementById("1").style.color='black';
   document.getElementById("2").style.color='black';
   document.getElementById("3").style.color='black';
   document.getElementById("4").style.color='black';
@@ -256,3 +233,12 @@ function sweeden(){
   document.getElementById("7").style.color='black';
    document.getElementById("8").style.color='red';
 }
+$(document).ready(function(){
+  $('#english').on('click',function(){
+    $('#dutch').hide();
+  })
+  $('.btns').on('click',function(){
+    var panelId=$(this).attr('data-panelid')
+    $('#'+panelId).toggle();
+  })
+})

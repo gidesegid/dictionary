@@ -20,9 +20,6 @@ body {
     height: 100% min-width: 320px;
 }
 
-.backgroundImage {
-    background-image: url("https://image.freepik.com/free-vector/modern-abstract-background_1048-1003.jpg");
-}
 
 .contentLimit {
     margin: 10px 10px;
@@ -133,6 +130,11 @@ footer a:hover {
     text-align: center;
 }
 
+.tableclass{
+background-color: white;
+font-size:20px;
+font-weight: bold;
+}
 .butwrap{
  margin: 0 auto;
 }
