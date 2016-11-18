@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<style type="text/css">
+	body{
+		margin:20px 30px;
+	}
+	div{
+		 margin:50px 50px;
+         background-color: rgba(195, 102, 102, 0.67);
+	}
+	.row{
+		    margin-right: -15px;
+	}
+</style>
+
+</head>
+
+<body ng-controller="mycontroller" class="text-centere">
+     
+     <input type="text" id="textsample" name="oTextbox">
+    
+    	<div class="container">
+            <div class="row">
+                <div>
+                     <label>English<input type="text" class="form-control" ng-model="engField"></label>  
+                     <label>Tigrigna<input type="text" class="form-control" ng-model="tigField"> </label>
+                     <input type="button" value="update" ng-click="update()" ng-model="updatebutton" class="btn btn-primary">
+                     <label ng-model="idOfEmpty"></label>
+                </div>
+                <table class="table" >
+                   <thead>
+                       <tr>
+                         <th>english</th>
+                         <th>tigrigna</th>
+                          <th>value</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                      <tr ng-repeat="words in dataToUpdate | filter:eng">
+                        <td><input type="button" class="btn btn-primary" ng-click="updateWord(words)" value="Translate {{words.word}} to tigrina">  {{words.word}}</td>
+                        <td>{{words.wordTig}}</td>
+                         <td>{{words.value}}</td>
+                      </tr>
+                   </tbody>
+                </table>
+            </div>
+         
+        </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript">
+
+
+    	var myApp=angular.module('myApp',[]);
+    	myApp.controller('mycontroller',function($scope,$http,$window){
+             //load words to update
+              $http.get('/updates').success(function(response){
+                $scope.dataToUpdate=response;
+              })
+            //select word to update
+              $scope.updateWord=function(words){
+                 $scope.engField=words.word
+                 $scope.idOfEmpty=words.value;
+                }
+               $scope.update=function(){
+                    var tigWord=$scope.tigField;//the word in tigrigna
+                    var language=7;//language of the word
+                    var value=$scope.idOfEmpty;//value of the word
+                    if(tigWord==null){
+                        alert("please fill data");
+                    }else{
+                         $http.put('/updateword/'+language+'/'+value+'/'+tigWord).success(function(response){
+                                alert("updated");
+                          })
+                    }
+               } 
+        });
+ var lastKeyPressed = 0;
+
+function sendKey()
+{
+    var WshShell = new ActiveXObject("WScript.Shell");
+    WshShell.SendKeys( 'a' );
+}
+
+function getCurLayout()
+{
+    sendKey();
+    setTimeout("lastKeyLang()",10);
+}
+
+function lastKeyLang()
+{
+    if( lastKeyPressed == 97 )
+        alert( 'EN' );
+    else
+        alert( 'HE' );  
+}
+
+document.onkeypress = saveLastKey;  
+function saveLastKey()
+{
+    lastKeyPressed = window.event.keyCode;
+}
+nValue = oTextbox.value.charCodeAt(0);
+alert(nValue)
+         
+    </script>
+</body>
+</html>

@@ -26,33 +26,37 @@
                         <h1>ትርጎማ<br> ቛንቛ ትግርኛ</h1></div>
                 </div>
             </header>
-            <main>
-                <div class="mainBox">
-                    <div class="toBox">
-                        <h2 class="langSelector">From | ካብ</h2>
+            <main class="container">
+                <div class="mainBox row">
+                    <div class="toBox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                       <!-- <h2 class="langSelector">From | ካብ</h2>-->
                         <label ng-model="languages"></label>
                         <label ng-model="value"></label>
                         
                         <div class="butwrap">
                             <div class="butbox">
-                                <button ng-click="fromSwitchTranslation(1)" onclick="english()" id="1" class="butns">English</button>
-                                <button ng-click="fromSwitchTranslation(2)" onclick="dutch()" id="2" class="butns">Dutch</button>
-                                <button ng-click="fromSwitchTranslation(3)" onclick="germen()" id="3" class="butns">Germany</button>
-                                 <button ng-click="fromSwitchTranslation(4)" onclick="french()" id="4" class="butns">French</button>
-                                <button ng-click="fromSwitchTranslation(5)" onclick="italian()" id="5" class="butns">Italian</button>
-                                <button ng-click="fromSwitchTranslation(6)" onclick="norway()" id="6" class="butns">Norway</button>
-                                 <button ng-click="fromSwitchTranslation(7)" onclick="tigrigna()" id="7" class="butns">Tigrigna</button>
-                                 <button ng-click="fromSwitchTranslation(8)" onclick="sweeden()" id="8" class="butns">Sweden</button>
+                                <button ng-click="fromSwitchTranslation(1)" onclick="alert(this.id)" id="1" class="butns">English</button>
+                                <button ng-click="fromSwitchTranslation(2)" onclick="alert(this.id)" id="2" class="butns">Dutch</button>
+                                <button ng-click="fromSwitchTranslation(3)" onclick="alert(this.id)" id="3" class="butns">Germany</button>
+                                 <button ng-click="fromSwitchTranslation(4)" onclick="alert(this.id)" id="4" class="butns">French</button>
+                                <button ng-click="fromSwitchTranslation(5)" onclick="alert(this.id)" id="5" class="butns">Italian</button>
+                                <button ng-click="fromSwitchTranslation(6)" onclick="alert(this.id)" id="6" class="butns">Norway</button>
+                                 <button ng-click="fromSwitchTranslation(7)" onclick="alert(this.id)" id="7" class="butns">Tigrigna</button>
+                                 <button ng-click="fromSwitchTranslation(8)" onclick="alert(this.id)" id="8" class="butns">Sweden</button>
+                                 <button ng-click="fromSwitchTranslation(9)" onclick="alert(this.id)" id="9" class="butns">Arabic</button>
+                                 <button ng-click="fromSwitchTranslation(10)" onclick="alert(this.id)" id="10" class="butns">Israel</button>
                             </div>
                         </div>
 
                         <label class="contentLimit">
-                            <autocomplete ng-model="inputdata" attr-placeholder="type to search words..." click-activation="true" data="datas" on-type="fillData" on-select="dataSelection"></autocomplete>
+                            <autocomplete ng-model="inputdata" ng-keypress="myFunct($event)" attr-placeholder="type to search words..." click-activation="true" data="datas" ng-focus="hello()" on-type="fillData" on-select="dataSelection"></autocomplete>
+                           <label id="remainderLangSelector"></label>
                         </label>
                     </div>
                     <div class="toBox">
-                        <h2 class="langSelector">To | ናብ</h2>
+                        <!-- <h2 class="langSelector">To | ናብ</h2>-->
                         <div class="butwrap">
+                       
                             <div class="butbox">
                                 <button ng-click="toswitchTranslation(1)" ng-model="english" onclick="toEnglish()" id="to1" class="butns">English</button>
                                 <button ng-click="toswitchTranslation(2)" ng-model="dutch" onclick="toDutch()" id="to2" class="butns">Dutch</button>
@@ -62,24 +66,26 @@
                                <button ng-click="toswitchTranslation(6)" ng-model="norway" onclick="toNorway()" id="to6" class="butns">Norway</button>
                                 <button ng-click="toswitchTranslation(7)" ng-model="tigrigna" onclick="toTigrigna()" id="to7" class="butns">Tigrigna</button>
                                 <button ng-click="toswitchTranslation(8)" ng-model="sweeden" onclick="toSweeden()" id="to8" class="butns">Sweden</button>
+                                <button ng-click="toswitchTranslation(9)" ng-model="arabic" onclick="toArabic()" id="to9" class="butns">Arabic</button>
+                                <button ng-click="toswitchTranslation(10)" ng-model="israel" onclick="toIsrael()" id="to10" class="butns">Israel</button>
                             </div>
-                        </div><br><br>
-
-                         <table class="table tableclass">
+                            <label id="infoToLang"></label><br><br>
+                             <table class="table tableclass">
                               <tbody class="tableclass">
                                    <tr ng-repeat="data in outPut">
                                       <td>{{data.word}}</td>
+                                      
                                    </tr>
                              </tbody>
                        </table>
+                        </div><br><br>
+
+                        
                     </div>
                 </div>
             </main>
             <footer>
-                <a href="/contactUs">Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-               <!-- <a href="/about">About  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="/paragraph">Paragraph   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="/adminPage">Admin Page</a>-->
+                <a href="/adminPage">login, to add new words</a>
             </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
